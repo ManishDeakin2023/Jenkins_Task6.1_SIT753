@@ -83,7 +83,7 @@ pipeline
                                             body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
                                             attachLog: true
                                         }
-                            }
+                            
 
                                 failure 
                                         {
@@ -93,6 +93,7 @@ pipeline
                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
                                             attachLog: true
                                          }
+                            }
                     }
                 stage('Deploy to Production') 
                     {
