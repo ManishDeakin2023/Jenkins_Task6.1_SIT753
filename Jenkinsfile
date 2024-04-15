@@ -48,9 +48,7 @@ pipeline
                                             body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
                                             attachLog: true
                                         }
-                            }
-                        post 
-                            {
+
                                 failure 
                                         {
 
@@ -59,8 +57,7 @@ pipeline
                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
                                             attachLog: true
                                         }
-                            }
-                    }
+                        }
                 stage('Deploy to Staging') 
                     {
                         steps 
@@ -86,8 +83,7 @@ pipeline
                                             attachLog: true
                                         }
                             }
-                        post 
-                            {
+
                                 failure 
                                         {
                                             
@@ -96,7 +92,6 @@ pipeline
                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
                                             attachLog: true
                                          }
-                            }
                     }
                 stage('Deploy to Production') 
                     {
