@@ -45,7 +45,7 @@ pipeline
                                         {
                                             emailext 
                                                         (
-                                                            to: 'mail2manish599@gmai.com',
+                                                            mail to: 'mail2manish599@gmai.com',
                                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                                             body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
                                                             attachLog: true
@@ -58,7 +58,7 @@ pipeline
                                         {
                                             emailext 
                                                         (
-                                                            to: 'mail2manish599@gmai.com',
+                                                           mail to: 'mail2manish599@gmai.com',
                                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
                                                             attachLog: true
@@ -87,7 +87,7 @@ pipeline
                                         {
                                             emailext 
                                                         (
-                                                            to: 'mail2manish599@gmai.com',
+                                                          mail to: 'mail2manish599@gmai.com',
                                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                                             body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
                                                             attachLog: true
@@ -100,7 +100,7 @@ pipeline
                                         {
                                             emailext 
                                                         (
-                                                            to: 'mail2manish599@gmai.com',
+                                                           mail to: 'mail2manish599@gmai.com',
                                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
                                                             attachLog: true
