@@ -57,7 +57,8 @@ pipeline
                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
                                             attachLog: true
                                         }
-                        }
+                            }
+                    }
                 stage('Deploy to Staging') 
                     {
                         steps 
