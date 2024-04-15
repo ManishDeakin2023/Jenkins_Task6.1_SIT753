@@ -43,26 +43,21 @@ pipeline
                             {
                                 success 
                                         {
-                                            emailext 
-                                                        (
-                                                            mail to: 'mail2manish599@gmai.com',
-                                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
-                                                            body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
-                                                            attachLog: true
-                                                        )
+                                            mail to: 'mail2manish599@gmai.com',
+                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
+                                            body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
+                                            attachLog: true
                                         }
                             }
                         post 
                             {
                                 failure 
                                         {
-                                            emailext 
-                                                        (
-                                                           mail to: 'mail2manish599@gmai.com',
-                                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
-                                                            body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
-                                                            attachLog: true
-                                                        )
+
+                                            mail to: 'mail2manish599@gmai.com',
+                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
+                                            body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
+                                            attachLog: true
                                         }
                             }
                     }
@@ -85,27 +80,22 @@ pipeline
                             {
                                 success 
                                         {
-                                            emailext 
-                                                        (
-                                                          mail to: 'mail2manish599@gmai.com',
-                                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
-                                                            body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
-                                                            attachLog: true
-                                                        )
+                                            mail to: 'mail2manish599@gmai.com',
+                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
+                                            body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
+                                            attachLog: true
                                         }
                             }
                         post 
                             {
                                 failure 
                                         {
-                                            emailext 
-                                                        (
-                                                           mail to: 'mail2manish599@gmai.com',
-                                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
-                                                            body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
-                                                            attachLog: true
-                                                        )
-                                        }
+                                            
+                                            mail to: 'mail2manish599@gmai.com',
+                                            subject: "Jenkins Stage: '${env.STAGE_NAME}'",
+                                            body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
+                                            attachLog: true
+                                         }
                             }
                     }
                 stage('Deploy to Production') 
