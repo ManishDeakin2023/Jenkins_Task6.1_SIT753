@@ -43,20 +43,22 @@ pipeline
                             {
                                 success 
                                         {
-                                            attachLog: true,
+                                            emailext(
                                             mail to: 'mail2manish599@gmai.com',
                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                             body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
-                                            // attachLog: true
+                                            attachLog: true
+                                            )
                                         }
 
                                 failure 
                                         {
-                                            attachLog: true,
+                                            emailext(
                                             mail to: 'mail2manish599@gmai.com',
                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
-                                            // attachLog: true
+                                            attachLog: true
+                                            )
                                         }
                             }
                     }
@@ -79,21 +81,24 @@ pipeline
                             {
                                 success 
                                         {
-                                            attachLog: true,
+                                            emailext(
+                                           
                                             mail to: 'mail2manish599@gmai.com',
                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                             body: "The '${env.STAGE_NAME}' stage finished with status: ${currentBuild.result}",
-                                            // attachLog: true
+                                            attachLog: true
+                                            )
                                         }
                             
 
                                 failure 
                                         {
+                                            emailext(
                                             attachLog: true,   
                                             mail to: 'mail2manish599@gmai.com',
                                             subject: "Jenkins Stage: '${env.STAGE_NAME}'",
                                             body: "The '${env.STAGE_NAME}' stage failed with status: ${currentBuild.result}",
-                                            // attachLog: true
+                                            )
                                          }
                             }
                     }
