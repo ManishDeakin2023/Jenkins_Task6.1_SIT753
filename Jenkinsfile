@@ -119,7 +119,7 @@ def SendEmailNotification(stageName)
    
 
     // Send mail with .txt file as attachment
-    mail to: recipient, subject: subject, body: "Please find the attached log file for '${stageName}' stage.", emailBody
+    mail to: recipient, subject: subject, body: emailBody
 }
 
 
