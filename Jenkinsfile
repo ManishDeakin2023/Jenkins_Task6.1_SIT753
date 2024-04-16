@@ -137,5 +137,5 @@ def SendEmailNotification(stageName)
    
 
     // Send mail with .txt file as attachment
-    mail to: recipient, subject: subject, body: emailBody, attachLog: true, attachmentsPattern: logFile
+    mail to: recipient, subject: subject, body: emailBody, attachLog: true, attachmentsPattern: "${logFile}"
 }
