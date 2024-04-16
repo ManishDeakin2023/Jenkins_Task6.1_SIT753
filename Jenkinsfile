@@ -43,18 +43,17 @@ pipeline
                             {
                                 success 
                                         {
-                                            script{
-                                                SendEmailNotification(env.STAGE_NAME);
-                                            }
-                                           
+                                            script
+                                                {
+                                                    SendEmailNotification(env.STAGE_NAME);
+                                                }                                         
                                         }
-
                                 failure 
                                         {
-                                            script{
-                                                SendEmailNotification(env.STAGE_NAME);
-                                            }
-                                           
+                                            script
+                                                {
+                                                    SendEmailNotification(env.STAGE_NAME);
+                                                }
                                         }
                             }
                     }
@@ -63,7 +62,7 @@ pipeline
                         steps 
                             {
                                 echo 'Task: Deploy the game to a staging server or a test environment.'
-                                echo 'Tool: AWS CLI or similar.'
+                                echo 'Tool: AWS CLI.'
                             }
                     }
                 stage('Integration Tests on Staging') 
@@ -77,20 +76,18 @@ pipeline
                             {
                                 success 
                                         {
-                                            script{
-                                                SendEmailNotification(env.STAGE_NAME);
-                                            }
-                                           
-                                        }
-                            
-
+                                            script
+                                                {
+                                                    SendEmailNotification(env.STAGE_NAME);
+                                                }
+                                        }                           
                                 failure 
                                         {
-                                            script{
-                                                SendEmailNotification(env.STAGE_NAME);
-                                            }
-                                            
-                                         }
+                                            script
+                                                {
+                                                    SendEmailNotification(env.STAGE_NAME);
+                                                }
+                                        }
                             }
                     }
                 stage('Deploy to Production') 
