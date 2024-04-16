@@ -45,14 +45,14 @@ pipeline
                                         {
                                             script
                                                 {
-                                                    SendEmailNotification(env.STAGE_NAME);
+                                                    EmailNotification(env.STAGE_NAME);
                                                 }                                         
                                         }
                                 failure 
                                         {
                                             script
                                                 {
-                                                    SendEmailNotification(env.STAGE_NAME);
+                                                    EmailNotification(env.STAGE_NAME);
                                                 }
                                         }
                             }
@@ -78,14 +78,14 @@ pipeline
                                         {
                                             script
                                                 {
-                                                    SendEmailNotification(env.STAGE_NAME);
+                                                    EmailNotification(env.STAGE_NAME);
                                                 }
                                         }                           
                                 failure 
                                         {
                                             script
                                                 {
-                                                    SendEmailNotification(env.STAGE_NAME);
+                                                    EmailNotification(env.STAGE_NAME);
                                                 }
                                         }
                             }
@@ -101,7 +101,7 @@ pipeline
             }
 }
 
-def SendEmailNotification(stageName) 
+def EmailNotification(stageName) 
 {
     def recipient = 'mail2manish599@gmail.com'
     def subject = "Jenkins Stage: ${stageName}"
