@@ -104,39 +104,22 @@ pipeline
             }
 }
 
-// def SendEmailNotification(stageName) 
-// {
-//     def recipient = 'mail2manish599@gmail.com'
-//     def subject = "Jenkins Stage: ${stageName}"
-//     def body = "The '${stageName}' stage finished success"
-//     def logFile = currentBuild.rawBuild.getLogFile()
-
-//     def logContent = readFile(logFile.toString())
-
-//     def emailBody = "${body}\nbuild log:\n${logContent}"
-
-//     // Write email body to a .txt file
-   
-
-//     // Send mail with .txt file as attachment
-//     mail to: recipient, subject: subject, body: emailBody
-// }
-
 def SendEmailNotification(stageName) 
 {
     def recipient = 'mail2manish599@gmail.com'
     def subject = "Jenkins Stage: ${stageName}"
     def body = "The '${stageName}' stage finished success"
-    def logFile = "${env.STAGE_NAME}_log.txt"
+    def logFile = currentBuild.rawBuild.getLogFile()
 
     def logContent = readFile(logFile.toString())
-    writeFile file: logFile, text: currentBuild.rawBuild.getLogFile().text
-    def emailBody = "${body}\nbuild log:"
+
+    def emailBody = "${body}\nbuild log:\n${logContent}"
 
     // Write email body to a .txt file
    
 
     // Send mail with .txt file as attachment
-     emailext attachLog: true, body: "${body}\nbuild log:", subject: subject, to: recipient, attachmentsPattern: "${logFile}"
-        
+    mail to: recipient, subject: subject, body: emailBody
 }
+
+
