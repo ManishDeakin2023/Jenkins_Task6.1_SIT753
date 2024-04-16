@@ -110,16 +110,11 @@ def SendEmailNotification(stageName)
     def subject = "Jenkins Stage: ${stageName}"
     def body = "The '${stageName}' stage finished success"
     def logFile = currentBuild.rawBuild.getLogFile()
-
     def logContent = readFile(logFile.toString())
-
     def emailBody = "${body}\nbuild log:\n${logContent}"
-
-    // Write email body to a .txt file
-   
-
-    // Send mail with .txt file as attachment
-    mail to: recipient, subject: subject, body: emailBody
+    mail to: recipient, 
+    subject: subject, 
+    body: emailBody
 }
 
 
