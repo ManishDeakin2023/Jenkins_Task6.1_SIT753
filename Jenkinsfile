@@ -136,6 +136,11 @@ def SendEmailNotification(stageName)
     def logContent = readFile(logFile.toString())
 
     def emailBody = "${body}\nbuild log:\n${logContent}"
-    //send mail with log content as attachment
-    mail to: recipient, subject: subject, body: emailBody
+
+    // Write email body to a .txt file
+    def fileName = "${stageName}_log.txt"
+    writeFile file: fileName, text: emailBody
+
+    // Send mail with .txt file as attachment
+    mail to: recipient, subject: subject, body: "Please find the attached log file for '${stageName}' stage.", attachLog: true, attachmentsPattern: fileName
 }
